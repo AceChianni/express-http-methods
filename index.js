@@ -7,8 +7,16 @@ app.use(express.json());
 
 // Root Route (GET)
 app.get("/", (req, res) => {
-    res.send("hello");
+    res.send("hello wrld");
 })
+
+app.get("/anime", (req, res) => {
+    res.type(json);
+    res.send(`{
+        "title": "FMAB",
+        "episodes": 52
+        }`);
+});
 
 app.post("/data", (req, res) => {
     const data = req.body;
